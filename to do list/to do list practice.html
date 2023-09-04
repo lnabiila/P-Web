@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style tdl.css">
+        <title>
+            to do list
+        </title>
+    </head>
+    
+    <body>
+        <div class="list">
+        <fieldset style="margin: 10px 10px">
+            <legend>
+                <h2>My To Do List</h2>
+            </legend>
+            <p>Double-click an item to mark it as completed</p>
+            <form>
+                <input type="text" id="inputan">
+                <button class="bttn" id="addbttn">Add</button>
+            </form><br>
+            <ol id="listnya">
+            </ol>
+            <div id="ctrl">
+                <button id="clear-button" onclick="clearCompletedToDoItems()" class="bttn">Clear "Completed"</button>
+                <button id="empty-button" onclick="emptyList()" class="bttn">Empty List</button>
+                <button id="save-button" onclick="saveList()" class="bttn">Save List</button>
+            </div>
+        </fieldset>
+        </div>
+        <script src="script tdl.js"></script>
+    </body> 
+</html>

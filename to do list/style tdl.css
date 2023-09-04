@@ -1,0 +1,104 @@
+body{
+    background-color: rgb(223, 228, 255);
+    font-family: 'Trebuchet MS';
+}
+
+.list p{
+    font-style: italic; 
+    color: grey; 
+    margin-top: -15px; 
+    font-size: small;
+}
+
+.list input{
+    padding: 1px 16px; 
+    border-radius: 5px; 
+    border-color: white;
+}
+
+.list .bttn:hover{
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.list .bttn{
+    background-color: black;
+    color: rgb(223, 228, 255);
+    border-radius: 10px;
+    padding: 1px 10px;
+}
+
+.list ol{
+    margin: 5px 0;
+}
+
+.list ol li{
+    margin: 0;
+    padding: 3px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 1s ease-out;
+    transition: all 1s ease-out;
+}
+
+.list ol li.completed {
+    text-decoration: line-through;
+    color: #666;
+}
+
+.list input {
+    padding: 3px 6px;
+}
+
+.list form {
+    display: inline-block;
+}
+
+#ctrl{
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-right: 0;
+}
+
+.list #clear-button {
+    background-color: black;
+    color: rgb(223, 228, 255);
+
+}
+
+.list #empty-button {
+    background-color: black;
+    color: rgb(223, 228, 255);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.list #save-button {
+    background-color: black;
+    color: rgb(223, 228, 255);
+}
+
+@media only screen and (min-width: 1400px) {
+    .list {
+        width: 35%;
+    }
+
+    .list input {
+        width: 400px;
+    }
+
+}
+
+@media only screen and (max-width: 1399px) and (min-width: 750px) {
+    .list {
+        width: 70%;
+    }
+
+    .list input {
+        width: 400px;
+    }
+}

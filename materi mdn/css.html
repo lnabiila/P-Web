@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>css citsit</title>
+        <link href="foldernyabeda/filecss.css" rel="stylesheet"/> <!--eksternal-->
+        <!--atau internal sbb-->
+        <style>
+            /*isinya 
+            .class{
+                properti: value;
+            }
+
+            #id{
+                properti: value;
+            }
+
+            tagHTML{
+                properti: value;
+            }
+
+            li.special,
+            span.special{
+                menerapkan ke tag li dan span yang mempunyai class spesial
+            }
+            
+            body div p{
+                menerapkan ke tag p yang berada di dalam div di body
+            }
+            
+            h1 + div + p{
+                menerapkan ke setiap tag p yang berada tepat setelah tag div yang berada tepat setelah tag h1
+            } 
+            
+            a:link{
+                menerapkan ke a
+            } 
+
+            a:visited{
+                menerapkan ke a setelah linknya diklik
+            }
+            
+            a:link,
+            a:visited{
+                menerapkan ke a. a sebelum dan setelah diklik akan sama
+            }
+            
+            selector:hover{
+                menerapkan ke selector ketika kursor berada di selector
+            } 
+            
+            body h1 + p .special{
+                menerapkan ke tag p yang punya atribut class special, yang berada tepat setelah tag h1 yang berada di dalam body
+            } 
+            
+            .box p:first-child{
+                menerapkan ke setiap tag p pertama di dalam elemen dengan class box
+            } 
+            
+            p{
+                color: red;
+            }
+
+            p{
+                color: blue;
+            } 
+            
+            warna tag p adalah biru. This is because both the rules are from the same source, have an identical element selector, and therefore, carry the same specificity, but the last one in the source order wins.
+            
+            body{
+                background-color: pink;
+            }
+
+            @media (min-width: 30em){
+                body{
+                    background-color: blue;
+                }
+            } 
+            
+            @rule. the stylesheet defines a default pink background for the <body> element. However, a media query follows that defines a blue background if the browser viewport is wider than 30em.
+
+            article > p{
+                menerapkan ke semua p di dalam article, dimana p adalah anak langsung article. tidak berlaku untuk p di dalam tag lain yang jg berada di dalam article
+            } 
+            
+            h1 ~ p{
+                menerapkan ke semua tag p yang berada setelah elemen h1 dan keduanya berada dalam elemen yang sama (ortu h1 & p sam)
+            }
+
+            p::first-line {
+                hanya menerapkan ke bari pertama p
+            } 
+            
+            *{
+                * adalah universal selector, menerapkan ke seluruh dokumen
+            } 
+
+            article *:first-child{
+                menerapkan ke seluruh elemen pertama dari article
+            } 
+
+            tag[attr]{
+                menerapkan ke setiap tag/elemen yg punya atribut attr
+            }
+
+            tag[attr=value]{
+                menerapkan ke semua elemen yang memiliki atribut attr="value"
+            }
+
+            tag[attr~=value]{
+                menerapkan ke semua elemen yang memiliki atribut attr = "value" atau mengandung "value" attr = "blur value"
+            }
+
+            tag[attr|=value]{
+                menerapkan ke semua elemen yang memiliki atribut attr = "value" atau attr = "value-xxx"
+            }
+
+            tag[attr^=value]{
+                menerapkan ke semua tag yg value atributnya dimulai dari "value"
+            }
+
+            tag[attr$=value]{
+                menerapkan ke semua tag yg value atributnya diakhiri oleh "value"
+            }
+
+            tag[attr*=value]{
+                menerapkan ke semua tag yg value atributnya mengandung "value"
+            }
+
+            semua case sensitive, kl mau case insensitive, kasih i
+            contoh:
+            li[class^="a" i]{
+                menerapkan ke semua tag yg value classnya dimulai dari a/A
+            }
+
+            article p:first-child::first-line{
+                menerapkan ke baris pertama p, dimana p adalah anak pertama article
+            }
+
+            .box::before{
+                content: "This should show before the other content in the element which has class="box". ";
+                properti: value;
+            }   
+    
+            .box::after{
+                content: "This should show after the other content in the element which has class="box". ";
+                properti: value;
+            }   
+            
+            selector{
+                background-color: (nama warna) atau
+                                    #000 atau #000000 atau
+                                    rgb(0, 0, 0) atau rgba(0, 0, 0, 0.5) atau
+                                    hsl(hue, saturation%, light%) atau hsl(188 97% 28% / 0.3)
+                background-position: (horizontal) (vertical)
+            }
+
+            selector{
+                background: 
+                    linear-gradient(
+                        105deg,
+                        rgba(255, 255, 255, 0.2) 39%,
+                        rgb(51, 56, 57) 96%
+                        //rgba(warna, opacity) lebarnya%
+                        //rgb(warna, full/opacity = 1) lebarnya%
+                    ) center center / 400px 200px no-repeat,
+                    url(big-star.png) center no-repeat,
+                    rebeccapurple; //warna gradien
+            }
+
+            selector{
+                background-image: url(image1.png), url(image2.png), url(image3.png), url(image4.png);
+                background-repeat: no-repeat, repeat-x, repeat;
+                background-position:
+                    10px 20px,
+                    top right;
+            }
+
+            selector{
+                max-width
+                min-width
+            } sangat oke
+
+            image{
+                object-fit: cover; the aspect ratio is maintained, some parts of the image will be cropped by the box.
+                object-fit: contain; the image will be scaled down until it is small enough to fit inside the box.
+            }
+
+            If we created a variable called $base-color in the first line, we could then use it through the stylesheet anywhere that required that color.
+            example: color: $base-color;
+
+            */
+
+            /*
+            inherit
+            .parent{
+                font-size: 16px;
+            }
+
+            .child{
+                font-size: inherit; 
+            }
+            Elemen .child akan mewarisi nilai font-size dari elemen .parent
+            
+            initial
+            .child{
+                font-size: initial;
+            }
+            Elemen .child akan menggunakan nilai awal font-size (misalnya 16px)
+
+            unset
+            .child{
+                font-size: unset;
+            }
+            Elemen .child akan mengambil nilai font-size dari elemen induk jika ada, jika tidak, akan menggunakan nilai awal
+            */
+
+            .outer{
+                border: 5px solid black;
+            }
+
+            .box{
+                padding: 10px;
+                width: calc(90% - 30px);
+                background-color: rebeccapurple;
+                color: white;
+                transform: rotate(0.5turn);
+            } /*the values calc define the width of this box to be 90% of the containing block width, minus 30 pixels.*/
+            
+            /*
+            .biru{
+                color: slateblue;
+            }
+
+            li[class]{
+                font-size: 70%;
+            }
+
+            li[class="a"]{
+                background-color: hotpink;
+            }
+
+            li[class~="a"]{
+                color: blue;
+            }
+
+            li[class|="b"]{
+                font-style: italic;
+            } 
+            */
+            
+            /*
+            li[class^="a"]{
+                font-size: 150%;
+            }
+
+            li[class$="a"]{
+                background-color: rgb(0, 115, 255);
+            }   
+
+            li[class*="a"]{
+                color: hotpink;
+            }
+            */
+
+            /*
+            @layer firstLayer, secondLayer;
+
+            p{specificity = 0-0-1
+                background-color: red;
+                color: grey !important;
+                border: 5px inset purple;
+            }
+
+            p#addSpecificity{specificity = 1-0-1
+                border-style: solid !important;
+            }
+
+            @layer firstLayer{
+                #addSpecificity{1-0-0
+                    background-color: blue;
+                    color: white !important;
+                    border-width: 5px;
+                    border-style: dashed !important;
+                }
+            }
+
+            @layer secondLayer{
+                p#addSpecificity{1-0-1
+                    background-color: green;
+                    color: orange !important;
+                    border-width: 10px;
+                    border-style: dotted !important;
+                }
+            }     
+            <p id="addSpecificity"> A paragraph with a border and background</p>
+            hasilnya adalah background-color: red; border: 5px dashed purple; color: white;
+            ini karena non-layered normal styles didahulukan drpd layered normal styles dan important layered styles didahulukan drpd important styles yg dideklarasikan setelahnya. specificity tidak dipedulikan
+            */
+
+            /*
+            @media ](max-width: 5000px){
+                @layer site;
+            }
+                
+            @layer page{
+                h1{
+                    text-decoration: overline; 
+                    color: red;
+                }
+            }
+
+            @layer site{
+                h1{
+                    text-decoration: underline; 
+                    color: green;
+                }
+            }
+
+            Jika viewport memiliki lebar lebih kecil dari atau sama dengan 5000px, maka aturan CSS di dalam lapisan "site" akan diterapkan pada elemen <h1>, sehingga teks akan memiliki dekorasi garis bawah (underline) dan berwarna hijau.
+            Jika viewport memiliki lebar lebih kecil dari atau sama dengan 5000px, dan jika aturan CSS di dalam lapisan "site" berlaku pada elemen <h1>, maka aturan CSS di dalam lapisan "page" akan menggantikan aturan CSS di dalam lapisan "site". Dalam hal ini, teks akan memiliki dekorasi garis atas (overline) dan berwarna merah.
+            */
+
+            /*
+            .box{
+                inline-size: 200px;
+                writing-mode: horizontal-tb;
+            }
+
+            .logical{
+                margin-block-start: 20px;
+                padding-inline-end: 2em;
+                padding-block-start: 2px;
+                border-block-start: 5px solid pink;
+                border-inline-end: 10px dotted rebeccapurple;
+                border-block-end: 1em double orange;
+                border-inline-start: 1px solid black;
+            }
+
+            .physical{
+                margin-top: 20px;
+                padding-right: 2em;
+                padding-top: 2px;
+                border-top: 5px solid pink;
+                border-right: 10px dotted rebeccapurple;
+                border-bottom: 1em double orange;
+                border-left: 1px solid black;
+            }
+
+            jika writing-mode nya diubah, border yg physical tidak berubah, border yg logical berubah mengikuti writing-mode
+            */
+
+            /*
+            .myform {
+                border: 2px solid #000;
+                padding: 5px;
+            }
+
+            .myform input[type="submit"]{
+                border-radius: 5px;
+                background-color: rebeccapurple;
+                color: white
+            }
+
+            .myform input[type="submit"], .myform input[type="search"]{
+                padding: 10px
+            }
+
+                */
+
+        </style>
+    </head>
+
+    <body>
+        <p style="color: rgb(224, 130, 238);">color untuk ubah warna font</p>
+        <p>list-style- untuk ubah ikon</p>
+        <ul style="list-style-type: circle; list-style-position: inside;">
+            <li>list 1</li>
+            <li>list 2</li>
+        </ul>
+        <p style="background-color: rgb(255, 176, 176);">background-color untuk ubah warna background</p>
+        <p style="border-top: 1px solid black; border-bottom: 1px dashed hotpink; border-style: double; border-radius: 5px; border-top-right-radius: 20px;">serba serbi border, border-(position): (width) (style) (color)</p>
+        <div class="outer">
+            <div class="box">The inner box is 90% - 30px.</div>
+        </div>
+        <h3>Shorthand properties</h3>
+        <ul>
+            <li>font<br>
+                font: (font-style) (font-variant) (font-weight) (font-size)/(line-height) (font-family);<br>
+                contoh: "font: italic (no font-variant) bold 16px/1.5 'Arial', sans-serif;"
+            </li>
+            <li>padding<br>
+                padding: 5px; (semua sisi 5px)<br>
+                padding: 5px 10px; (atas bawah 5px, kanan kiri 10px)<br>
+                padding: (padding-top) (padding-right) (padding-bottom) (padding-left)<br>
+                nilai tidak bisa negatif
+            </li>
+            <li>border<br>
+                border: (border-width) (border-style) (border-color)
+            </li>
+            <li>margin<br>
+                kyk padding, nilai bisa negatif
+            </li>
+            <li>background<br>
+                background: (background-color) (background-image) (background-position) (background-repeat) (background-attachment);<br>
+                contoh: "background: red url(bg-graphic.png) 10px 10px repeat-x fixed;"
+            </li>
+            <li>animaton<br>
+                animation: (animation-name) (animation-duration) (animation-timing-function) (animation-delay) (animation-iteration-count) (animation-direction) (animation-fill-mode) (animation-play-state)
+                contoh: "animation: myAnimation 2s linear (no animation-delay) infinite (no animation-direction etc);"
+            </li>
+        </ul>
+        <p class="outer biru">satu class yg selectornya misah jd kyk dua class</p>
+        <!--<h3>Attribute presence and value selectors</h3>
+        <ul>
+            <li>Item 1</li>
+            <li class="a">Item 2</li>
+            <li class="b a">Item 3</li>
+            <li class="ab">Item 4</li>
+            <li class="b">Item 5</li>
+        </ul>-->
+        <!--<h3>Attribute substring matching selectors</h3>
+        <ul>
+            <li class="a">Item 1</li>
+            <li class="ab">Item 2</li>
+            <li class="bca">Item 3</li>
+            <li class="bcabc">Item 4</li>
+        </ul>-->
+        <p>pseudo-classes selector ada hover, focus, visited, dan banyak lagi <a href="https://chat.openai.com/?model=text-davinci-002-render-sha">cek disini</a></p>
+        <p>pseudo-elements ada before, after, first-line, dan sebagainya <a href="https://chat.openai.com/?model=text-davinci-002-render-sha">cek disini</a></p>
+        <h3>specificity</h3>
+        <p>Specificity is the algorithm that the browser uses to decide which property value is applied to an element. If multiple
+        style blocks have different selectors that configure the same property with different values and target the same
+        element, specificity decides the property value that gets applied to the element. Specificity is basically a measure of
+        how specific a selector's selection will be:</p>
+        <ul>
+            <li>An element selector is less specific; it will select all elements of that type that appear on a page, so it has less weight. Pseudo-element selectors have the same specificity as regular element selectors.</li>
+            <li>A class selector is more specific; it will select only the elements on a page that have a specific class attribute value, so it has more weight. Attribute selectors and pseudo-classes have the same weight as a class.</li>
+            <li>Attribute substring matching selectors lebih lemah dari Attribute presence and value selectors</li>
+        </ul>
+        <p>inline styles (style di dalam tag) > id > class > element</p>
+        <p>!important adalah pengubah prioritas pada deklarasi properti dalam CSS. Ketika Anda menambahkan !important di belakang nilai suatu properti, itu akan memberikan prioritas tinggi, dan nilai properti tersebut akan diutamakan bahkan jika ada deklarasi properti lain yang lebih spesifik atau mendeklarasikan properti yang sama.</p>
+        <h3>inheritance</h3>
+        <p>contoh: terdapat selector body yg memiliki properti color dgn value blue dan jg terdapat selector span yg memiliki selector color dgn value black. semua text di dalam body berwarna blue kecuali text di dalam span yg akan berwarna black</p>
+        <p>Properti CSS dapat dibagi menjadi dua jenis: inherited (diwarisi) dan non-inherited (tidak diwarisi). Properti inherited akan diwarisi oleh elemen anak dari elemen induknya, sedangkan properti non-inherited tidak diwarisi dan harus diatur secara eksplisit untuk setiap elemen.</p>
+        <p>margin, padding, border, background, color, font-family, font-size, font-weight, line-height, text-align, display, position, float, width, height adalah non-inherited properties</p>
+        <p>lima universal property values untuk mengendalikan pewarisan (inheritance) dalam CSS:</p>
+        <ol>
+            <li>inherit: Memungkinkan elemen anak untuk mewarisi nilai properti dari elemen induknya. Jika nilai properti diatur pada elemen induk, elemen anak akan mewarisi nilai tersebut. Jika nilai properti tidak diatur pada elemen induk, elemen anak akan menggunakan nilai default (initial) untuk properti tersebut.</li>
+            <li>initial: Mengatur properti kembali ke nilai awal (default). Elemen anak akan menggunakan nilai awal dari properti tersebut, tanpa memperhitungkan nilai yang diatur pada elemen induk.</li>
+            <li>unset: Mengatur properti ke nilai yang diwarisi jika properti tersebut dapat diwariskan, dan ke nilai awal jika properti tersebut tidak dapat diwariskan. Jika nilai properti diatur pada elemen anak, maka unset akan mengembalikan properti tersebut ke nilai diwarisi dari elemen induk. Jika nilai properti tidak diatur pada elemen anak, maka unset akan berperilaku seperti initial, menggunakan nilai default untuk properti tersebut.</li>
+            <li>revert: Mengatur properti kembali ke nilai sebelumnya sebelum ada penugasan nilai apapun. Jika nilai properti diatur pada elemen anak, maka revert akan mengembalikan properti tersebut ke nilai sebelumnya sebelum ada penugasan. Jika nilai properti tidak diatur pada elemen anak, maka revert akan berperilaku seperti inherit, mencari nilai yang diwarisi dari elemen induk.</li>
+            <li>revert-layer: Mirip dengan revert, namun nilainya lebih kuat. Biasanya digunakan dalam kasus ketika ada konflik nilai dengan cascading dan ingin menggunakan nilai yang ditentukan oleh revert. Saat menggunakan revert-layer, nilai-nilai yang diterapkan melalui revert tidak akan mempengaruhi nilai properti yang ditetapkan setelahnya, kecuali ada konflik lebih lanjut.</li>
+        </ol>
+        <p>baris pertama css = @layer theme, layout, and utilities<br>
+        Jika beberapa layer telah dibuat sebelum pernyataan di atas, selama layer dengan nama-nama tersebut belum ada, maka ketiga layer tersebut akan dibuat dan ditambahkan pada akhir daftar layer yang sudah ada. Namun, jika layer dengan nama yang sama sudah ada, maka pernyataan di atas hanya akan membuat dua layer baru. Sebagai contoh, jika layout sudah ada, maka hanya theme dan utilities yang akan dibuat, namun urutan layer dalam kasus ini adalah layout, theme, dan utilities.</p>
+        <h3>block and inline boxes</h3>
+        <h4>outer display type</h4>
+        <ul>
+            <li>block<br>
+                the box will break onto a new line. padding, margin, dan border akan menyebabkan elemen lainnya terdorong menjauhi kotak. Jika lebar tidak ditentukan, kotak akan melebar ke arah sejajar untuk mengisi ruang yang tersedia dalam wadahnya. Pada sebagian besar kasus, kotak akan menjadi selebar wadahnya, mengisi 100% ruang yang tersedia.<br>
+                contoh HTML elements yg menggunakan block as their default outer display type ada h1-h6, div, ul, ol, li, table, form, header, footer, article, nav, aside, p, dsb.
+            </li>
+            <li>inline<br>
+                The box will not break onto a new line. The width and height properties will not apply. Top and bottom padding, margins, and borders will apply but will not cause other inline boxes to move away from the box. Left and right padding, margins, and borders will apply and will cause other inline boxes to move away from the box.<br>
+                contoh HTML elements yg menggunakan inline as their default outer display type ada span, a, strong, b, em, i, br, img, input, label, select, cite, q, code, abbr, sup, sub, dsb.
+            </li>
+        </ul>
+        <h4>inner display type</h4>
+        <p>bisa diubah dengan style display: block/inline/inline-block/flex/grid/dsb</p>
+        <h3>background attachment</h3>
+        <ul>
+            <li>scroll<br>
+                causes the element's background to scroll when the page is scrolled. If the element content is scrolled, the background does not move. In effect, the background is fixed to the same position on the page, so it scrolls as the page scrolls.
+            </li>
+            <li>fixed<br>
+                causes an element's background to be fixed to the viewport so that it doesn't scroll when the page or element content is scrolled. It will always remain in the same position on the screen.
+            </li>
+            <li>local<br>
+                fixes the background to the element it is set on, so when you scroll the element, the background scrolls with it.
+            </li>
+        </ul>
+        <h3>writing-mode</h3>
+        <ul>
+            <li>horizontal-tb: Top-to-bottom block flow direction. Sentences run horizontally.</li>
+            <li>vertical-rl: Right-to-left block flow direction. Sentences run vertically.</li>
+            <li>vertical-lr: Left-to-right block flow direction. Sentences run vertically.</li>
+        </ul>
+        <h3>overflow</h3>
+        <p>digunakan ketika Anda ingin mengontrol perilaku tampilan konten yang melebihi ukuran kotak elemen. biasanya digunakan pada elemen dengan ukuran tetap (fixed size) atau elemen yang memiliki ukuran terbatas dalam tata letak.</p>
+        <ul>
+            <li>overflow: hidden. Konten yang melebihi ukuran elemen akan disembunyikan dan tidak akan terlihat di luar batas elemen. Bagian yang melebihi akan "terpotong" atau dianggap tidak ada.</li>
+            <li>overflow: scroll. Browsers with visible scrollbars will always display them—even if there is not enough content to overflow.</li>
+            <li>overflow-y/x: scroll. scrollbarnya di sumbu y/x</li>
+            <li>overflow: auto. If you only want scrollbars to appear when there is more content than can fit in the box.</li>
+            <li>overflow: visible. Nilai ini merupakan nilai default. Konten yang melebihi ukuran elemen akan tampil di luar batas elemen, dan mungkin tumpang tindih dengan elemen di sekitarnya.</li>
+            <li>overflow: overlay. Konten yang melebihi ukuran elemen akan disembunyikan, tetapi scrollbar hanya akan muncul jika pengguna mencoba scroll konten tersebut.</li>
+        </ul>
+        <p></p>
+        <h4><a href="https://developer.mozilla.org/en-US/docs/Learn/CSS/Building_blocks/Values_and_units" style="text-decoration: none; color:black">CSS values and units</a></h4>
+        <!--<form method="post" action="" class="myform">
+            <div><label for="fldSearch">Keywords</label>
+            <input type="search" id="fldSearch" name="keywords">
+            <input type="submit" name="btnSubmit" value="Search"></div>
+        </form>-->
+    </body>
+</html>

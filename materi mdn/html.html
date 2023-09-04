@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html> <!--tag untuk membuat dokumen HTML-->
+    <head>
+        <title>html citsit</title>
+    </head>
+    
+    <body> <!--untuk menampilkan isi dokumen HTML-->
+        <h1>ini h1</h1>
+        <h2>ini h2</h2>
+        <h3>ini h3</h3>
+        <h4>ini h4</h4>
+        <h5>ini h5</h5>
+        <h6>ini h6</h6>
+        <p>&lt;p&gt; untuk paragraf</p>
+        <center>&lt;center&gt; untuk menampilkan teks dengan posisi yang horizontal di tengah.</center>
+        <hr> <!--untuk membuat garis horizontal-->
+        <br> <!--untuk membuat baris baru-->
+        <ul>
+            <li>&lt;ul&gt; unordered list, icon listnya dapat diubah-ubah dengan css
+                <ol>
+                    <li>nested list</li>
+                </ol>
+            </li>
+        </ul>
+        <ol>
+            <li>&lt;ol&gt; ordered list, type listnya bisa diubah dengan menambahkan atribut type='a/A/i/I' pada tag ol
+                <ul>
+                    <li>nested list</li>
+                </ul>
+            </li>
+        </ol>
+        <dl>&lt;dl&gt; definition list
+            <dt>&lt;dt&gt; definition term</dt>
+            <dd>&lt;dd&gt; definition description</dd>
+        </dl>
+        <p>&lt;em&gt; atau &lt;i&gt; <i>untuk</i> <em>italic</em></p>
+        <p>&lt;strong&gt; atau &lt;b&gt; <b>untuk</b> <strong>bold</strong></p>
+        <p>&lt;u&gt; untuk <u>underline</u></p>
+        <p>urutannya <i>italic <b>bold <u>underline</u></b></i></p>
+        <p>a link to <a href="https://www.mozilla.org/en-US/">the Mozilla homepage</a>. its using &lt;a href="link"&gt;</p>
+        <a href="https://developer.mozilla.org/en-US/">
+            <h4>MDN Web Docs (using h4, bisa jg pake img)</h4>
+        </a>
+        <p>Here is a blockquote:</p>
+        <blockquote cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/blockquote">
+            <p>
+                <code>&lt;blockquote&gt;</code> untuk mengutip teks dari sumber eksternal atau teks kutipan yang lebih panjang dari satu paragraf.
+            </p>
+        </blockquote>
+        <p><code>&lt;q&gt;</code> is
+            <q  cite="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/q"> intended for short quotations that don't require paragraph breaks.</q>
+        — <a href="/en-US/docs/Web/HTML/Element/q"><cite>MDN q page</cite></a>.
+        </p>
+        <p>&lt;abbr&gt; untuk menandai singkatan dalam teks. atribut title dapat berisi definisi atau penjelasan lengkap dari singkatan tersebut yang akan muncul ketika teksnya di-<i>hover</i>. Saya adalah seorang <abbr title="Guru Besar">Profesor</abbr> di Universitas ABC.</p>
+        <p>&lt;address&gt; untuk menandai bagian teks mana pun yang berisi informasi kontak</p>
+        <p>&lt;sup&gt; untuk menampilkan teks di atas garis teks biasa (superscript). 2<sup>2</sup> = 4</p>
+        <p>&lt;sub&gt; untuk menampilkan teks di bawah garis teks biasa (subscript). H<sub>2</sub>O adalah air.</p>
+        <p><code>&lt;code&gt;</code> untuk menandai kode komputer atau teks yang harus ditampilkan dalam format kode.</p>
+        <pre>&lt;pre&gt; untuk mempertahankan format dan tata letak teks yang dituliskan di dalamnya.</pre>
+        <p>&lt;var&gt; untuk menandai variabel atau <var>nilai</var> yang digunakan dalam konteks matematika atau ilmiah lainnya.</p>
+        <p>&lt;kbd&gt; untuk menandai teks yang merupakan input pengguna melalui keyboard. Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy the text.</p>
+        <p>&lt;samp&gt; untuk menandai contoh keluaran atau hasil dari suatu program. The program prints <samp>Hello, World!</samp> on the screen.</p>
+        <p>&lt;time&gt; untuk menandai atau merepresentasikan waktu atau tanggal dalam dokumen HTML. Artikel dipublikasikan pada <time datetime="2023-07-20T10:30:00">20 Juli 2023, 10:30 AM</time></p>
+        <h3>Document and Website Structure</h3>
+        <ol>
+            <li>header &lt;header&gt;<br>berisi elemen-elemen yang menampilkan informasi penting pada bagian atas halaman. Ini bisa termasuk judul situs, logo,
+            menu navigasi utama, atau elemen lain yang penting untuk mengidentifikasi dan membantu navigasi di situs web.</li>
+            <li>navigation bar &lt;nav&gt;<br>berisi menu navigasi utama situs web. Ini membantu pengunjung untuk berpindah antara halaman.</li>
+            <li>main content &lt;main&gt;<br>bagian utama dari konten yang ingin disajikan di situs web. terdapat tiga subsections:
+                <ul>
+                    <li>article &lt;article&gt;<br>menekankan bahwa konten tersebut memiliki makna yang lebih mandiri dan signifikan.</li>
+                    <li>section &lt;section&gt;<br>untuk mengelompokkan bagian-bagian tertentu dalam dokumen, seperti bab dalam buku, bagian dari artikel, atau segmen konten yang terkait.</li>
+                    <li>div &lt;div&gt;<br>untuk memberikan gaya atau perilaku tertentu pada kelompok konten tertentu.</li>
+                </ul>
+            </li>
+            <li>sidebar &lt;aside&gt;<br>bagian di samping konten utama yang sering berisi elemen tambahan yang dapat membantu navigasi dan memberikan informasi tambahan. biasa berada di dalam &lt;main&gt;</li>
+            <li>footer<br>berada di bagian bawah halaman dan biasanya berisi informasi tambahan tentang situs web.</li>
+        </ol>
+        <h3>Non-Semantic Wrappers</h3>
+        <p>which you should only use if you can't think of a better semantic text element to wrap your content or don't want to add any specific meaning.</p>
+        <ul>
+            <li>&lt;span&gt; inline (horizontal)</li>
+            <li>&lt;div&gt; block (vertical)</li>
+        </ul>
+        <p>&lt;figure&gt; untuk mengelompokkan konten multimedia yang berdiri sendiri dalam halaman web.</p>
+        <p>&lt;figcaption&gt; menyediakan keterangan atau deskripsi tentang konten multimedia yang ada di dalamnya.</p>
+        <p>&lt;picture&gt; dapat menyertakan beberapa sumber gambar dengan format, resolusi, atau ukuran yang berbeda.</p>
+        <p>&lt;img&gt; untuk menampilkan gambar di halaman web. atribut src untuk memasukkan sumbernya. atribut alt untuk deskripsi alternatif(tulisan yang muncul jika gambar tidak muncul). atribut title sama kayak abbr. juga terdapat atribut width dan height</p>
+        <p>atribut &lt;srcset&gt; untuk menyertakan beberapa sumber gambar dan spesifikasi resolusi untuk masing-masingnya, dipisahkan oleh koma. Browser akan mengambil gambar yang resolusinya paling sesuai dengan resolusi layar saat ini atau perangkat pengguna.</p>
+        <p>contoh penggunaan &lt;picture&gt;</p>
+        <picture>
+            <source srcset="gambar_webp.webp" type="image/webp">
+            <source srcset="gambar_jpg.jpg" type="image/jpeg">
+            <img src="gambar_jpg.jpg" alt="Deskripsi gambar">
+        </picture>
+        <p>Jika tidak ada elemen &lt;source&gt; yang cocok, maka gambar dari atribut src pada elemen &lt;img&gt; akan ditampilkan.</p>
+        <p>&lt;video&gt; untuk menampilkan video di halaman web. atribut src untuk memasukkan sumbernya. atribut controls untuk menampilkan kontrol video standar seperti play, pause, dan volume. atribut lain ada width, height, autoplay, loop, muted, poster, preload. preload ada none, auto, metadata</p>
+        <p>&lt;audio&gt; untuk menampilkan file audio di halaman web. atribut src dan controls sama kayak video</p>
+        <p>&lt;svg&gt; format grafis berbasis XML yang digunakan untuk membuat gambar dan grafik vektor yang dapat diubah ukurannya tanpa kehilangan kualitas.</p>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Element">elemen2 svg</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Learn/HTML/Multimedia_and_embedding/Adding_vector_graphics_to_the_Web">more about svg</a>
+        <p>elemen-elemen dalam HTML yang digunakan untuk menyisipkan konten dari sumber eksternal ke dalam halaman web:</p>
+        <ul>
+            <li>&lt;iframe&gt; untuk menyisipkan halaman web lain di dalam halaman web utama.</li>
+            <li>&lt;embed&gt; untuk menyisipkan konten media, seperti audio atau video, tanpa kontrol pemutaran standar.</li>
+            <li>&lt;object&gt; untuk menyisipkan konten interaktif dan menyediakan fallback jika konten utama tidak tersedia.</li>
+        </ul>
+        <a href="https://chat.openai.com/?model=text-davinci-002-render-sha">perbedaan ketiganya dan atribut2nya</a>
+        <p>contoh iframe</p>
+        <iframe width="170" height="150" src="https://www.youtube.com/embed/QH2-TGUlwu4" frameborder="0" allowfullscreen>
+        </iframe>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d37995.65748333395!2d-2.273568166412784!3d53.473310471916975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487bae6c05743d3d%3A0xf82fddd1e49fc0a1!2sThe+Lowry!5e0!3m2!1sen!2suk!4v1518171785211"
+            width="200" height="150" frameborder="0" style="border:0" allowfullscreen>
+        </iframe>
+        <p>contoh object</p>
+        <object data="mypdf.pdf" type="application/pdf" width="800" height="1200">
+            <p>You don't have a PDF plugin, but you can <a href="mypdf.pdf">download the PDF file.</a></p>
+        </object>
+        <h4>subtitle</h4>
+        <p>use WebVTT file format and &lt;track&gt; element</p>
+        <p>To get this displayed along with the HTML media playback, you need to:</p>
+        <ol>
+            <li>Save it as a .vtt file in a sensible place.</li>
+            <li>Link to the .vtt file with the &lt;track&gt; element. it should be placed within &lt;audio&gt; or &lt;video&gt;, but after all &lt;source&gt; elements. Use the kind attribute to specify whether the cues are subtitles, captions, or descriptions.</li>
+        </ol>
+        <a href="https://chat.openai.com/c/3a3feb21-4737-4fdc-a84f-7cf593c32966">atribut &lt;track&gt;</a><br>
+        <a href="https://iandevlin.github.io/mdn/video-player-with-captions/">contoh</a>
+        <a href="https://github.com/iandevlin/iandevlin.github.io/tree/master/mdn/video-player-with-captions">source codenya</a>
+        <h3>Table</h3>
+        <table>
+            <tr>
+                <td>1st cell</td>
+                <td>2nd cell</td>
+                <td>3rd cell</td>
+            </tr>
+            <tr>
+                <td>2nd row</td>
+                <td>&nbsp;</td>
+                <td><< blank</td>
+            </tr>
+        </table>
+        <p>&lt;th&gt; untuk membuat sel-sel header (judul) dalam sebuah tabel. dapat digunakan sebagai alternatif dari &lt;td&gt;. Elemen &lt;th&gt; memiliki tampilan yang bold secara default untuk menandai bahwa itu adalah sel header.</p>
+        <p>colspan dan rowspan adalah atribut yang digunakan dalam elemen &lt;td&gt; dan
+        &lt;th&gt; untuk menggabungkan atau melebarkan sel-sel dalam tabel.</p>
+        <table>
+            <tr>
+                <th>kolom 1</th>
+                <th>kolom 2</th>
+                <th>kolom 3</th>
+            </tr>
+            <tr>
+                <td>baris 2</td>
+                <td colspan="2">2 kolom jadi satu</td>
+                <td>kolom 4</td>
+            </tr>
+        </table>
+        <p>&lt;col&gt; untuk menentukan properti yang akan diterapkan pada satu atau beberapa kolom dalam tabel.</p>
+        <p>&lt;colgroup&gt; untuk mengelompokkan beberapa elemen &lt;col&gt; untuk diterapkan pada beberapa kolom dalam tabel secara bersamaan.</colgroup></p>
+        <p>&lt;caption&gt; untuk judul tabel</p>
+        <table>
+            <caption>nyoba col & colgroup</caption>
+            <colgroup>
+                <col style="width: 210px; background-color: blanchedalmond;">
+                <col span="2" style="background-color: rgb(197, 135, 255); font-weight: bold;">
+            </colgroup>
+            <tr>
+                <td>col baris pertama untuk kolom 1</td>
+                <td>col baris kedua untuk kolom kedua</td>
+            </tr>
+            <tr>
+                <td>baris 2</td>
+                <th>baris 2</th>
+                <td>baris 2</td>
+            </tr>
+        </table>
+        <p>&lt;thead&gt;, &lt;tfoot&gt;, dan &lt;tbody&gt;. thead untuk mengelompokkan baris-baris yang berfungsi sebagai header atau judul kolom dari tabel. tfoot untuk mengelompokkan baris-baris yang berfungsi sebagai footer atau catatan akhir dari tabel. tbody untuk mengelompokkan baris-baris data dalam tabel, berisi data utama tabel.</p>
+        <table>
+            <caption>nested table</caption>
+            <tr>
+                <th>title1</th>
+                <th>title2</th>
+            </tr>
+            <tr>
+                <td>
+                    <table style="border: 2px solid black;">
+                        <tr>
+                            <td>cell1</td>
+                            <td>cell2</td>
+                        </tr>
+                    </table>
+                </td>
+                <td>cell2</td>
+            </tr>
+        </table>
+        <ul>
+            <li>atribut scope="row" menunjukkan bahwa header sel tersebut mencakup atau menandakan baris dalam tabel. dipakai di header tbody.</li>
+            <li>atribut scope="col" menunjukkan bahwa header sel tersebut mencakup atau menandakan kolom dalam tabel. dipakai di header thead.</li>
+        </ul>
+        <h3>form</h3>
+        <form>
+            
+        </form>
+    </body>
+</html>

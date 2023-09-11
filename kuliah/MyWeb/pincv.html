@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Halaman Tersembunyi</title>
+    <style>
+        #content {
+            display: none;
+        }
+
+        #pinForm {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="pinForm">
+        <label for="pinInput">Masukkan PIN:</label>
+        <input type="password" id="pinInput" placeholder="PIN">
+        <button type="button" id="submitButton">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById("submitButton").addEventListener("click", function () {
+            const enteredPIN = document.getElementById("pinInput").value;
+            const correctPIN = "1234"; // Gantilah dengan PIN yang sesuai
+
+            if (enteredPIN === correctPIN) {
+                document.getElementById("pinForm").style.display = "none"; // Menyembunyikan form
+                window.location.href = "mini project cv.html";
+            } else {
+                alert("PIN salah"); // Menampilkan pesan kesalahan jika PIN salah
+            }
+        });
+    </script>
+</body>
+
+</html>

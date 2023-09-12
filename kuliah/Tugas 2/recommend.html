@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    </meta>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    </meta>
+    <title>Lana's</title>
+    <link href="https://fonts.gstatic.com" rel="preconnect">
+    </link>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,600&amp;display=swap"
+        rel="stylesheet">
+    </link>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <style>
+        a{
+            color: black;
+            text-decoration: none;
+        }
+
+        .center{
+            text-align: center;
+        }
+
+        body{
+            background-color: beige;
+            font-family: Poppins;
+            overflow: auto;
+        }
+
+        .kotak{
+            margin: 20px;
+            padding: 0 10px 10px;
+            border: 1px solid #666;
+            border-radius: 8px;
+            box-shadow: 0 0 10px #666;
+            padding-top: 10px;
+        }
+
+        .kolom{
+            width: 100%;
+            display: flex;
+            justify-content: space-between; 
+            flex-wrap: wrap;
+
+        }
+
+        button{
+            background-color: beige;
+            border-radius: 10px;
+            padding: 1px 10px;
+            font-size: medium;
+        }
+
+        button:hover{
+            cursor: pointer;
+            box-shadow: 0px 0px 3px black;
+        }
+
+        .animasi{
+            position:relative;
+            margin: auto;
+            padding:40px;
+            width:110px;
+        }
+        
+        .animasi div {
+            height:20px;
+            width:20px;
+            border-radius:50%;
+            background: black;
+            float:left;
+            margin:0 3px;
+            background:#000000;
+        }
+
+        .animasi .ball1 {
+            z-index:1;
+            -moz-animation: bounce 3s infinite ease-in-out;
+            -webkit-animation: bounce 3s infinite ease-in-out;
+        }
+
+        .animasi .ball2 {
+            -moz-animation: bounce 3s infinite ease-in-out;
+            -webkit-animation: bounce 3s infinite ease-in-out;
+            -webkit-animation-delay: 0.5s;
+            animation-delay: 0.5s;
+        }
+
+        .animasi .ball3 {
+            -moz-animation: bounce 3s infinite ease-in-out;
+            -webkit-animation: bounce 3s infinite ease-in-out;
+            -webkit-animation-delay: 1s;
+            animation-delay: 1s;
+        }
+
+        .animasi .ball4 {
+            -moz-animation: bounce 3s infinite ease-in-out;
+            -webkit-animation: bounce 3s infinite ease-in-out;
+            -webkit-animation-delay: 1.5s;
+            animation-delay: 1.5s;
+        }
+
+        @-moz-keyframes bounce {
+            0%,15% {-moz-transform: translate(0,0);}
+            50% {-moz-transform: translate(0,-30px);background:#ffffff;}
+            85%, 100% {-moz-transform: translate(0,0);};
+        
+        }
+
+        @-webkit-keyframes bounce {
+            0%,20% {-webkit-transform: translate(0,0);}
+            50% {-webkit-transform: translate(0,-30px);background:#a24545;}
+            80%, 100% {-webkit-transform: translate(0,0);};
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <div>
+            <fieldset class="kotak">
+                <h4 style="text-align: justify;">I'd like to watch anime, YouTube videos, and listen to music. These are my list of anime, YouTube channel, and playlist recommendations.</h4>
+            </fieldset>
+            <div class="kolom">
+                <button><a href="#anime">Anime</a></button>
+                <button><a href="#ytchannel">Youtube Channel</a></button>
+                <button><a href="#playlist">Playlist</a></button>
+            </div>
+            <div class="animasi">
+                <div class="ball1"></div>
+                <div class="ball2"></div>
+                <div class="ball3"></div>
+                <div class="ball4"></div>
+            </div>
+        </div>
+    </article>
+    <hr>
+    <section id="anime">
+        <div>
+            <table border="1">
+                <caption><b>Anime</b></caption>
+                <tr>
+                    <th>Judul</th>
+                    <th>Rate</th>
+                    <th>Deskripsi Singkat</th>
+                </tr>
+                <tr>
+                    <td>Hunter x Hunter</td>
+                    <td class="center">8.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Demon Slayer/Kimetsu No Yaiba</td>
+                    <td class="center">9</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Moriarty the Patriot</td>
+                    <td class="center">9.5</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Spy Family</td>
+                    <td class="center">9</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Dr. Stone</td>
+                    <td class="center">9</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Assasination Classroom</td>
+                    <td class="center">10</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Black Clover</td>
+                    <td class="center">9</td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <br>
+    <hr>
+    <section id="ytchannel">
+        <div>
+            <p>Youtube Channel</p>
+            <ul>
+                <li>
+
+                </li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <section id="playlist">
+        <div>
+            <p>Playlist</p>
+            <ul>
+                <li>
+                    <a href="https://open.spotify.com/playlist/6gWXoAiAiBHzvSAYZq9gj3?si=c9d03cd092604bf5">Galau</a><br>
+                    Cocok buat kamu yang lagi galau sehabis putus atau habis disakiti orang brengsek.
+                </li>
+                <li>
+                    <a href="https://open.spotify.com/playlist/0qnouk0VbgKMalZxdpVZjh?si=2fcfc18172c94e0d">Jatuh Cinta</a><br>
+                    Cocok buat kamu yang lagi kasmaran dan berbunga-bunga.
+                </li>
+                <li>
+                    <a href="https://open.spotify.com/playlist/3yvuK9hnYbgUzdKQjY4adL?si=f8610e0edf514192">Highschool Memories</a><br>
+                    Cocok buat kamu, angkatan 2020-2023, yang pengen dengerin lagu semasa smp dan sma.
+                </li>
+            </ul>
+        </div>
+    </section>
+    <hr>
+    <footer>
+        <h3 style="text-align: center;">Contact me at
+            <a href="mailto: lathiifahn@gmail.com"><img src="cv/logoemail.png" style="height: 20px; margin-left: 5px;"></a>
+        </h3>
+    </footer>
+</body>
+
+</html>

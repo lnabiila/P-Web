@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kalkulator Sederhana</title>
+    <style>
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 5px 10px;
+            margin: 2px ;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Kalkulator Sederhana</h1>
+    <input type="text" id="x">
+    <input type="text" id="y"><br>
+    <button onclick="tambah()">+</button>
+    <button onclick="kurang()">-</button>
+    <button onclick="kali()">*</button>
+    <button onclick="bagi()">/</button>
+    <p id="hasil"></p>
+
+    <script>
+        let inputX = document.getElementById('x');
+        let inputY = document.getElementById('y');
+
+        function tambah() {
+            document.getElementById("hasil").innerHTML = parseFloat(inputX.value) + parseFloat(inputY.value);
+        };
+
+        function kurang() {
+            document.getElementById("hasil").innerHTML = parseFloat(inputX.value) - parseFloat(inputY.value);
+        };
+
+        function kali() {
+            document.getElementById("hasil").innerHTML = parseFloat(inputX.value) * parseFloat(inputY.value);
+        };
+
+        function bagi() {
+            document.getElementById("hasil").innerHTML = parseFloat(inputX.value) / parseFloat(inputY.value);
+        };
+
+    </script>
+</body>
+</html>

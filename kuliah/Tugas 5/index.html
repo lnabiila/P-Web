@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prakiraan Cuaca Surabaya</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #222;
+        }
+
+        #weather-container {
+            width: 90%;
+            background: linear-gradient(135deg, #00feba, #5b548a);
+            color: #fff;
+            margin: 100px auto 0;
+            padding: 40px 35px;
+            border-radius: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            max-width: 470px;
+        }
+
+        h1 {
+            font-size: 27px;
+            text-align: center;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 8px 0;
+        }
+
+        #temperature {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        #humidity {
+            color: #000000;
+            font-weight: bold;
+        }
+
+        #precipProbability {
+            color: #000000;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="weather-container">
+        <h1 style="text-align: center;">Prakiraan Cuaca Surabaya Hari ini</h1><br>
+        <p>Temperatur: <span id="temperature"></span></p>
+        <p>Kelembaban: <span id="humidity"></span></p>
+        <p>Peluang Hujan: <span id="precipProbability"></span></p>
+    </div>
+
+    <script>
+        function fetchData() {
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', 'https://api.open-meteo.com/v1/forecast?latitude=-7.2492&longitude=112.7508&hourly=temperature_2m,relativehumidity_2m,precipitation_probability,precipitation,weathercode', true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    const data = JSON.parse(xhr.responseText);
+                    document.getElementById('temperature').textContent = data.hourly.temperature_2m[0] + '°C';
+                    document.getElementById('humidity').textContent = data.hourly.relativehumidity_2m[0] + '%';
+                    document.getElementById('precipProbability').textContent = data.hourly.precipitation_probability[0] + '%';
+                } else if (xhr.readyState === 4 && xhr.status !== 200) {
+                    console.error('Failed to fetch data.');
+                }
+            };
+            xhr.send();
+        }
+
+        window.onload = fetchData;
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>ETS</title><link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body style="margin-top: 25px;;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 mb-4">
+                <div class="card border-left-primary shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div>
+                                <p class="matauang">EUR USD</p>
+                                <p id="eurusd" class="angka"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div>
+                                <p class="matauang">USD THB</p>
+                                <p id="usdthb" class="angka"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card border-left-info shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div>
+                                <p class="matauang">GBP USD</p>
+                                <p id="gbpusd" class="angka"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div>
+                                <p class="matauang">USD JPY</p>
+                                <p id="usdjpy" class="angka"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <div class="col-md-3 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div>
+                            <p class="matauang">AUD USD</p>
+                            <p id="audusd" class="angka"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div>
+                                <p class="matauang">USD CHF</p>
+                                <p id="usdchf" class="angka"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div>
+                                <p class="matauang">NZD USD</p>
+                                <p id="nzdusd" class="angka"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-3 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div>
+                                <p class="matauang">USD CAD</p>
+                                <p id="usdcad" class="angka"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div>
+                                <p class="matauang">USD ZAR</p>
+                                <p id="usdzar" class="angka"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+            function fetchData() {
+                    const xhr = new XMLHttpRequest();
+                    xhr.open('GET', 'http://apilayer.net/api/live?access_key=431235c35ffa358a17aa279cc9430643&pairs=EURUSD,EURGBP,GBPUSD,USDJPY,AUDUSD,USDCHF,NZDUSD,USDCAD,USDZAR', true);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState === 4 && xhr.status === 200) {
+                            const data = JSON.parse(xhr.responseText);
+                            document.getElementById('eurusd').textContent = data.quotes.USDEUR;
+                            document.getElementById('usdthb').textContent = data.quotes.USDTHB;
+                            document.getElementById('gbpusd').textContent = data.quotes.USDGBP;
+                            document.getElementById('usdjpy').textContent = data.quotes.USDJPY;
+                            document.getElementById('audusd').textContent = data.quotes.USDAUD;
+                            document.getElementById('usdchf').textContent = data.quotes.USDCHF;
+                            document.getElementById('nzdusd').textContent = data.quotes.USDNZD;
+                            document.getElementById('usdcad').textContent = data.quotes.USDCAD;
+                            document.getElementById('usdzar').textContent = data.quotes.USDZAR;
+                        } else if (xhr.readyState === 4 && xhr.status !== 200) {
+                            console.error('Failed to fetch data.');
+                        }
+                    };
+                    xhr.send();
+                }
+                window.onload = fetchData;
+    </script>
+</body>
+</html>

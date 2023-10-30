@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Vue.js</title>
+    <script src="https://unpkg.com/vue@3.0.0/dist/vue.global.js"></script>
+    <style>
+        button{
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <h3>Kalkulator</h3>
+        <p>Angka 1: </p>
+        <input v-model="v1" placeholder="Masukkan angka"><br>
+        <p>Angka 2: </p>
+        <input v-model="v2" placeholder="Masukkan angka"><br><br>
+        <button v-on:click="tambah">+</button>
+        <button v-on:click="kurang">-</button>
+        <button v-on:click="kali">*</button>
+        <button v-on:click="bagi">/</button><br>
+        {{ hasil }}
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    v1: '',
+                    v2: '',
+                    hasil: '',
+                };
+            },
+            methods: {
+                tambah() {
+                    this.hasil = parseFloat(this.v1) + parseFloat(this.v2);
+                },
+                kurang() {
+                    this.hasil = parseFloat(this.v1) - parseFloat(this.v2);
+                },
+                kali() {
+                    this.hasil = parseFloat(this.v1) * parseFloat(this.v2);
+                },
+                bagi() {
+                    this.hasil = parseFloat(this.v1) / parseFloat(this.v2);
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>
